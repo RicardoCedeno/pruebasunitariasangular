@@ -1,7 +1,3 @@
-
-
-
-
 import { TrueFalsePipePipe } from './true-false-pipe.pipe';
 
 describe('TrueFalsePipePipe', () => {

@@ -14,4 +14,9 @@ import { InputTextModule } from 'primeng/inputtext';
 export class AppComponent {
   title = 'pruebas-unitarias-cic';
   persona: Persona = {} as Persona;
+  showMessage: boolean = false;
+
+  onShowMessage(){
+    this.showMessage = true;
+  }
 }

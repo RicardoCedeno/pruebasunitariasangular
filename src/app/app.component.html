@@ -38,8 +38,11 @@
 
 </div>
 
-<p-button>Confirmar</p-button>
+<p-button (onClick)="onShowMessage()">Confirmar</p-button>
 
+@if (showMessage) {
+  <div>Usuario registrado con éxito</div>
+}
 
 
 
