@@ -1,34 +1,50 @@
 <h1 class="text-title">Pruebas unitarias CIC</h1>
 
-<form>
-  <div class="form-container">
-    <div class="form-subcontainer">
+<div class="formgrid grid justify-content-center">
+
+  <form action="">
+
+    <div class="field col justify-content">
       <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre">
+      <input type="text" pInputText name="nombre" id="nombre" [(ngModel)]="persona.nombre">
     </div>
-    <div class="form-subcontainer">
-      <label for="apellido">Apellido</label>
-      <input type="text" id="apellido" name="apellido" [(ngModel)]="persona.apellido">
+  
+    <div class="field col">
+      <label for="nombre">Apellido</label>
+      <input type="text" pInputText name="apellido" id="apellido" [(ngModel)]="persona.apellido">
     </div>
-  </div>
-  <div class="form-container">
-    <div class="form-subcontainer">
-      <label for="nombre">usuario</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre">
+  
+    <div class="field col">
+      <label for="nombre">Edad</label>
+      <input type="number" pInputText name="edad" id="edad" [(ngModel)]="persona.edad">
     </div>
-    <div class="form-subcontainer">
-      <label for="apellido">contraseña</label>
-      <input type="text" id="apellido" name="apellido" [(ngModel)]="persona.apellido">
+  
+    <div class="field col">
+      <label for="nombre">Teléfono</label>
+      <input type="tel" pInputText name="telefono" id="telefono" [(ngModel)]="persona.telefono">
     </div>
-  </div>
-  <div class="form-container">
-    <div class="form-subcontainer">
-      <label for="nombre">edad</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre">
+  
+    <div class="field col">
+      <label for="nombre">Usuario</label>
+      <input type="text" pInputText name="usuario" id="usuario" [(ngModel)]="persona.usuario">
     </div>
-    <div class="form-subcontainer">
-      <label for="apellido">telefono</label>
-      <input type="text" id="apellido" name="apellido" [(ngModel)]="persona.apellido">
+  
+    <div class="field col">
+      <label for="nombre">Contraseña</label>
+      <input type="password" pInputText name="contraseña" id="contraseña" [(ngModel)]="persona.contrasena">
     </div>
-  </div>
-</form>
+
+  </form>
+
+</div>
+
+<p-button>Confirmar</p-button>
+
+
+
+
+
+
+
+
+
