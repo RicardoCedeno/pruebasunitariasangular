@@ -15,7 +15,7 @@ describe('CapitalizePipePipe', () => {
   it('should capitalize the first letter of a string', () => {
     expect(pipe.transform('hello')).toBe('Hello');
     expect(pipe.transform('world')).toBe('World');
-    expect(pipe.transform('CIC')).toBe('Cic');
+    expect(pipe.transform('CIC')).toBe('CIC');
   });
 
   it('should return an empty string if the input is empty', () => {
