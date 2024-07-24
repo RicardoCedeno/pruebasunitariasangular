@@ -40,9 +40,35 @@
 
 <p-button (onClick)="onShowMessage()">Confirmar</p-button>
 
-@if (showMessage) {
-  <div>Usuario registrado con éxito</div>
+
+<h2>Usuarios registrados</h2>
+
+
+@for (usuario of usuarios; track $index){ 
+  
+    <div class="col-6">
+      <p-card [header]="usuario.usuario" [subheader]="usuario.edad.toString()" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+        </ng-template>
+        <div>
+            <div>Nombre: {{usuario.nombre}} {{usuario.apellido}}</div>
+            <div>Teléfono{{usuario.telefono}}</div>
+            @if (rol=="ADMINISTRADOR") {
+              <div>{{usuario.contrasena}}</div>
+            }
+        </div>
+        <ng-template pTemplate="footer">
+            <div class="flex gap-3 mt-1">
+                <p-button label="Ver perfil" severity="secondary" class="w-full" styleClass="w-full" />
+                <p-button label="Guardar perfil" class="w-full" styleClass="w-full" />
+            </div>
+        </ng-template>
+    </p-card>
+    </div>
+
 }
+
 
 
 

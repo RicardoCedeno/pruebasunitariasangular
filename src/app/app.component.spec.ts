@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -7,6 +9,12 @@ describe('AppComponent', () => {
       imports: [AppComponent],
     }).compileComponents();
   });
+  
+  
+
+  beforeEach(() =>{
+    
+  })
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -26,4 +34,13 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Pruebas unitarias CIC');
   });
+
+  //pruebas ngfor
+
+  const mockUsuarios = [
+    { nombre: 'Juan', apellido: 'Pérez', usuario: 'juanperez', contrasena: 'pass1234', edad: 30, telefono: 1234567890 },
+    { nombre: 'María', apellido: 'González', usuario: 'mariagonzalez', contrasena: 'password1', edad: 25, telefono: 9876543210 },
+  ];
+
+
 });
