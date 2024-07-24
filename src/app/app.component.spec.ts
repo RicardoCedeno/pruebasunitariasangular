@@ -1,20 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { By } from '@angular/platform-browser';
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
+import { appConfig } from './app.config';
 
 describe('AppComponent', () => {
+  let fixture = ComponentFixture<AppComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
     }).compileComponents();
   });
-  
-  
-
-  beforeEach(() =>{
-    
-  })
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

@@ -5,11 +5,12 @@ import { Persona } from './persona';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
+import { BackgroudColorDirective } from './directives/backgroud-color.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, ButtonModule, InputTextModule, CardModule],
+  imports: [RouterOutlet, FormsModule, ButtonModule, InputTextModule, CardModule, BackgroudColorDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -18,6 +19,7 @@ export class AppComponent {
   persona: Persona = {} as Persona;
   showMessage: boolean = false;
   rol: string = "ADMINISTRADOR"
+  color: string = "";
   onShowMessage(){
     this.showMessage = true;
   }
