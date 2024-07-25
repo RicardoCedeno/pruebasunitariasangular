@@ -1,41 +1,5 @@
 <h1 BackgroundColor="blue" class="text-title">Pruebas unitarias CIC</h1>
-
 <div class="formgrid grid justify-content-center">
-
-  <!-- <form action="">
-
-    <div class="field col justify-content">
-      <label for="nombre">Nombre</label>
-      <input type="text" pInputText name="nombre" id="nombre" [(ngModel)]="persona.nombre">
-    </div>
-  
-    <div class="field col">
-      <label for="nombre">Apellido</label>
-      <input type="text" pInputText name="apellido" id="apellido" [(ngModel)]="persona.apellido">
-    </div>
-  
-    <div class="field col">
-      <label for="nombre">Edad</label>
-      <input type="number" pInputText name="edad" id="edad" [(ngModel)]="persona.edad">
-    </div>
-  
-    <div class="field col">
-      <label for="nombre">Teléfono</label>
-      <input type="tel" pInputText name="telefono" id="telefono" [(ngModel)]="persona.telefono">
-    </div>
-  
-    <div class="field col">
-      <label for="nombre">Usuario</label>
-      <input type="text" pInputText name="usuario" id="usuario" [(ngModel)]="persona.usuario">
-    </div>
-  
-    <div class="field col">
-      <label for="nombre">Contraseña</label>
-      <input type="password" pInputText name="contraseña" id="contraseña" [(ngModel)]="persona.contrasena">
-    </div>
-
-  </form> -->
-
   <form [formGroup]="form" (submit)="sendLogin()" class="form">
     <div class="form-group">
       <label>Nombre</label>
@@ -67,42 +31,12 @@
       <input type="text" formControlName="contrasena">
     </div>
 
-    <button type="submit">Confirmar</button>
+    <button class="confirm-button" type="submit">Confirmar</button>
   </form>
 
 
 </div>
 <div>{{result}}</div>
-
-
-<!-- <h2>Usuarios registrados</h2> -->
-
-
-<!-- @for (usuario of usuarios; track $index){ 
-  
-    <div class="col-6">
-      <p-card [header]="usuario.usuario" [subheader]="usuario.edad.toString()" [style]="{ width: '360px' }">
-        <ng-template pTemplate="header">
-            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-        </ng-template>
-        <div>
-            <div>Nombre: {{usuario.nombre}} {{usuario.apellido}}</div>
-            <div>Teléfono{{usuario.telefono}}</div>
-            @if (rol=="ADMINISTRADOR") {
-              <div>{{usuario.contrasena}}</div>
-            }
-        </div>
-        <ng-template pTemplate="footer">
-            <div class="flex gap-3 mt-1">
-                <p-button label="Ver perfil" severity="secondary" class="w-full" styleClass="w-full" />
-                <p-button label="Guardar perfil" class="w-full" styleClass="w-full" />
-            </div>
-        </ng-template>
-    </p-card>
-    </div>
-
-} -->
-
 
 
 

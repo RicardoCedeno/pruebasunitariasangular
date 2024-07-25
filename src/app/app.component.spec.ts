@@ -47,7 +47,7 @@ describe('AppComponent', () => {
     const usuario = app.form.controls['usuario']
     const contrasena = app.form.controls['contrasena']
     
-    nombre.setValue('Juan Lopez')
+    nombre.setValue('Juan')
     apellido.setValue('Lopez')
     edad.setValue('13')
     telefono.setValue('1234567')
@@ -68,7 +68,28 @@ describe('AppComponent', () => {
     const usuario = app.form.controls['usuario']
     const contrasena = app.form.controls['contrasena']
     
-    nombre.setValue('Juan Lopez')
+    nombre.setValue('Juan')
+    apellido.setValue('Lopez')
+    edad.setValue('13')
+    telefono.setValue('1234567')
+    usuario.setValue('jlopez@gmail.com')
+    expect(app.form.invalid).toBeTrue();
+  })
+
+
+  it('should return invalid form', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const nombre = app.form.controls['nombre']
+    const apellido = app.form.controls['apellido']
+    const edad = app.form.controls['edad']
+    const telefono = app.form.controls['telefono']
+    const usuario = app.form.controls['usuario']
+    const contrasena = app.form.controls['contrasena']
+    
+    nombre.setValue('Juan')
     apellido.setValue('Lopez')
     edad.setValue('13')
     telefono.setValue('1234567')
