@@ -13,7 +13,7 @@ import { By } from '@angular/platform-browser';
 })
 class HostComponent {};
 
-fdescribe('BackgroudColorDirective', () => {
+describe('BackgroudColorDirective', () => {
   let component : HostComponent;
   let fixture : ComponentFixture<HostComponent>
 

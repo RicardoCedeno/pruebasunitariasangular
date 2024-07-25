@@ -2,7 +2,7 @@
 
 <div class="formgrid grid justify-content-center">
 
-  <form action="">
+  <!-- <form action="">
 
     <div class="field col justify-content">
       <label for="nombre">Nombre</label>
@@ -34,11 +34,45 @@
       <input type="password" pInputText name="contraseña" id="contraseña" [(ngModel)]="persona.contrasena">
     </div>
 
+  </form> -->
+
+  <form [formGroup]="form" (submit)="sendLogin()" class="form">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre">
+    </div>
+
+    <div class="form-group">
+      <label>Apellido</label>
+      <input type="text" formControlName="apellido">
+    </div>
+
+    <div class="form-group">
+      <label>Edad</label>
+      <input type="text" formControlName="edad">
+    </div>
+
+    <div class="form-group">
+      <label>Teléfono</label>
+      <input type="text" formControlName="telefono">
+    </div>
+    
+    <div class="form-group">
+      <label>Usuario</label>
+      <input type="text" formControlName="usuario">
+    </div>
+
+    <div class="form-group">
+      <label>Contraseña</label>
+      <input type="text" formControlName="contrasena">
+    </div>
+
+    <button type="submit">Confirmar</button>
   </form>
 
-</div>
 
-<p-button (onClick)="onShowMessage()">Confirmar</p-button>
+</div>
+<div>{{result}}</div>
 
 
 <!-- <h2>Usuarios registrados</h2> -->

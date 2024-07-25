@@ -3,12 +3,13 @@ import { AppComponent } from './app.component';
 import { By } from '@angular/platform-browser';
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { appConfig } from './app.config';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   let fixture = ComponentFixture<AppComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, ReactiveFormsModule, FormsModule],
     }).compileComponents();
   });
 
@@ -24,6 +25,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('pruebas-unitarias-cic');
   });
 
+
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
@@ -31,12 +33,47 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Pruebas unitarias CIC');
   });
 
-  //pruebas ngfor
+  //pruebas formulario
 
-  const mockUsuarios = [
-    { nombre: 'Juan', apellido: 'Pérez', usuario: 'juanperez', contrasena: 'pass1234', edad: 30, telefono: 1234567890 },
-    { nombre: 'María', apellido: 'González', usuario: 'mariagonzalez', contrasena: 'password1', edad: 25, telefono: 9876543210 },
-  ];
+  it('should return valid form', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
 
+    const nombre = app.form.controls['nombre']
+    const apellido = app.form.controls['apellido']
+    const edad = app.form.controls['edad']
+    const telefono = app.form.controls['telefono']
+    const usuario = app.form.controls['usuario']
+    const contrasena = app.form.controls['contrasena']
+    
+    nombre.setValue('Juan Lopez')
+    apellido.setValue('Lopez')
+    edad.setValue('13')
+    telefono.setValue('1234567')
+    usuario.setValue('jlopez@gmail.com')
+    contrasena.setValue('123456')
+    expect(app.form.valid).toBeTrue();
+  })
+
+  it('should return invalid form', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const nombre = app.form.controls['nombre']
+    const apellido = app.form.controls['apellido']
+    const edad = app.form.controls['edad']
+    const telefono = app.form.controls['telefono']
+    const usuario = app.form.controls['usuario']
+    const contrasena = app.form.controls['contrasena']
+    
+    nombre.setValue('Juan Lopez')
+    apellido.setValue('Lopez')
+    edad.setValue('13')
+    telefono.setValue('1234567')
+    usuario.setValue('jlopez@gmail.com')
+    expect(app.form.invalid).toBeTrue();
+  })
 
 });

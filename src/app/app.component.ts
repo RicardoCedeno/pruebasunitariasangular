@@ -1,21 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { Persona } from './persona';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { BackgroudColorDirective } from './directives/backgroud-color.directive';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, ButtonModule, InputTextModule, CardModule, BackgroudColorDirective],
+  imports: [RouterOutlet, FormsModule, ButtonModule, InputTextModule, CardModule, BackgroudColorDirective, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      nombre:['', Validators.required],
+      apellido:['', Validators.required],
+      edad:['', Validators.required],
+      telefono:['', Validators.required],
+      usuario:['', Validators.required],
+      contrasena:['', Validators.required]
+    })
+  }
+  private fb = inject(FormBuilder);
+
   title = 'pruebas-unitarias-cic';
+  result: string = "";
   persona: Persona = {} as Persona;
   showMessage: boolean = false;
   rol: string = "ADMINISTRADOR"
@@ -24,6 +39,13 @@ export class AppComponent {
     this.showMessage = true;
   }
 
+  form: FormGroup = new FormGroup({})
+
+  sendLogin(){
+    this.result = "Formulario enviado"
+  }
+
+  
   usuarios:Persona[]=[
     {
       nombre: 'Juan',
